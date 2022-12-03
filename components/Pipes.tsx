@@ -28,6 +28,9 @@ export default function Pipes() {
             }}
             className="absolute"
             children={<Pipe />}
+            transition={{
+              ease: "linear",
+            }}
           />
           <motion.div
             key={pipes.bottom.key}
@@ -36,6 +39,9 @@ export default function Pipes() {
             style={pipes.bottom.size}
             className="absolute"
             children={<Pipe />}
+            transition={{
+              ease: "linear",
+            }}
           />
         </>
       ))}

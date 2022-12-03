@@ -16,7 +16,7 @@ export function Bird() {
   } = useGame();
   useInterval(() => getNextFrame(), isFlying ? delay : null);
   return (
-    <motion.div
+    <div
       style={{
         backgroundImage: "url(/bird.png)",
         height,
@@ -52,9 +52,7 @@ export default function FlappyBird() {
         ...position,
         ...animate,
       }}
-      transition={{
-        ease: "linear",
-      }}
+   
     >
       <Bird />
     </motion.div>
