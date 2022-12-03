@@ -143,7 +143,7 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
         distance: 5,
         delay: 50,
       },
-      tolerance: 50,
+      tolerance: 30,
     },
     rounds: [],
     isStarted: false,
