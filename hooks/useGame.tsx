@@ -269,12 +269,12 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
   const checkImpact = (draft: StateDraft) => {
     const groundImpact =
       draft.bird.position.y + draft.bird.size.height >=
-      draft.window.height + 25;
+      draft.window.height + draft.pipe.tolerance;
     const impactablePipes = draft.pipes.filter((pipe) => {
       var birdX = draft.bird.position.x - draft.pipe.tolerance;
       return (
-        pipe.top.position.x <= birdX + draft.bird.size.width &&
-        pipe.top.position.x + pipe.top.size.width >= birdX
+        pipe.top.position.x < birdX + draft.bird.size.width &&
+        pipe.top.position.x + pipe.top.size.width > birdX
       );
     });
     const pipeImpact = impactablePipes.some((pipe) => {
@@ -283,7 +283,7 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
       const birdTop = draft.bird.position.y + draft.pipe.tolerance;
       const birdBottom =
         draft.bird.position.y + draft.bird.size.height - draft.pipe.tolerance;
-      return birdTop <= topPipe || birdBottom >= bottomPipe;
+      return birdTop < topPipe || birdBottom > bottomPipe;
     });
     if (groundImpact || pipeImpact) {
       draft.bird.isFlying = false;
