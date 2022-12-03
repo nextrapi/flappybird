@@ -52,7 +52,9 @@ export default function FlappyBird() {
         ...position,
         ...animate,
       }}
-   
+      transition={{
+        ease: "linear",
+      }}
     >
       <Bird />
     </motion.div>
