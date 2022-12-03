@@ -143,7 +143,7 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
         distance: 5,
         delay: 50,
       },
-      tolerance: 50,
+      tolerance: 30,
     },
     rounds: [],
     isStarted: false,
@@ -271,10 +271,9 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
       draft.bird.position.y + draft.bird.size.height >=
       draft.window.height + draft.pipe.tolerance;
     const impactablePipes = draft.pipes.filter((pipe) => {
-      var birdX = draft.bird.position.x - draft.pipe.tolerance;
       return (
-        pipe.top.position.x < birdX + draft.bird.size.width &&
-        pipe.top.position.x + pipe.top.size.width > birdX
+        pipe.top.position.x < draft.bird.position.x - draft.pipe.tolerance + draft.bird.size.width &&
+        pipe.top.position.x + pipe.top.size.width > draft.bird.position.x + draft.pipe.tolerance
       );
     });
     const pipeImpact = impactablePipes.some((pipe) => {
