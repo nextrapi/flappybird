@@ -7,13 +7,11 @@ import useInterval from "../hooks/useInterval";
 export default function Pipes() {
   const {
     isStarted,
-    pipe: {
-      config: { delay },
-    },
+    pipe: { delay },
     pipes: pipesArray,
-    handlePiping,
+    movePipes,
   } = useGame();
-  useInterval(() => handlePiping(), isStarted ? delay : null);
+  useInterval(() => movePipes(), isStarted ? delay : null);
   return (
     <>
       {pipesArray.map((pipes, index) => (

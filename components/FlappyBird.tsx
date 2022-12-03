@@ -8,9 +8,7 @@ export function Bird() {
       size: { height, width },
       frame,
       isFlying,
-      config: {
-        flap: { delay },
-      },
+      flap: { delay },
     },
     getNextFrame,
   } = useGame();
@@ -31,15 +29,14 @@ export function Bird() {
 export default function FlappyBird() {
   const {
     isStarted,
-    isGameOver,
-    bird: { config, position, animate },
+    bird: {
+      fall: { delay },
+      position,
+      animate,
+    },
     fall,
   } = useGame();
-  useInterval(
-    () => fall(),
-    isStarted && !isGameOver ? config.fall.delay : null
-  );
-  console.log("position", position);
+  useInterval(() => fall(), isStarted ? delay : null);
   return (
     <motion.div
       className={`m-auto absolute z-40 ${
@@ -54,7 +51,9 @@ export default function FlappyBird() {
       }}
       transition={{
         ease: "linear",
+        duration: 0.25,
       }}
+
     >
       <Bird />
     </motion.div>

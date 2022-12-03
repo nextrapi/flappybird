@@ -2,10 +2,6 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { GameProvider } from "../hooks/useGame";
 import Game from "../components/Game";
-import Footer from "../components/Footer";
-import Background from "../components/Background";
-import { Bird } from "../components/FlappyBird";
-import { motion } from "framer-motion";
 
 const Home: NextPage = () => {
   return (
