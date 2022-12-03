@@ -54,7 +54,7 @@ const defaultState = {
     width: 0,
     height: 0,
     extension: 0,
-    tolerance: 30,
+    tolerance: 25,
     distance: 20,
     delay: 125,
   },
