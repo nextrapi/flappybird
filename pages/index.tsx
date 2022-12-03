@@ -2,10 +2,18 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { GameProvider } from "../hooks/useGame";
 import Game from "../components/Game";
+import useElementSize from "../hooks/useElementSize";
+import useWindowSize from "../hooks/useWindowSize";
 
 const Home: NextPage = () => {
+  const {height} = useWindowSize();
   return (
-    <div className="fixed h-screen w-full flex bg-zinc-800 p-5">
+    <div
+      className="fixed  w-full flex bg-zinc-800 p-5"
+      style={{
+        height: `${height}px`,
+      }}
+    >
       <Head>
         <title>Flappy Bird</title>
         <link rel="icon" href="/favicon.ico" />
