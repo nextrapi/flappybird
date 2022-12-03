@@ -143,7 +143,7 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
         distance: 5,
         delay: 50,
       },
-      tolerance: 20,
+      tolerance: 50,
     },
     rounds: [],
     isStarted: false,
@@ -293,17 +293,18 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
   };
   const handleBirdRotation = (draft: StateDraft) => {
     if (draft.bird.isFlying) {
-      if (draft.isStarted) {
-        // In Game Rotation
-        if (draft.bird.position.y > draft.window.height / 2) {
-          draft.bird.animate.rotate = [-15, 15];
-        } else {
-          draft.bird.animate.rotate = [15, -15];
-        }
-      } else {
-        // Static Rotation
-        draft.bird.animate.rotate = [5, -5];
-      }
+      // if (draft.isStarted) {
+      //   // In Game Rotation
+      //   if (draft.bird.position.y > draft.window.height / 2) {
+      //     draft.bird.animate.rotate = [-15, 15];
+      //   } else {
+      //     draft.bird.animate.rotate = [15, -15];
+      //   }
+      // } else {
+      //   // Static Rotation
+      //   draft.bird.animate.rotate = [5, -5];
+      // }
+      draft.bird.animate.rotate = [0, 0];
     } else {
       // Impact Rotation
       draft.bird.animate.rotate = [0, 540];
