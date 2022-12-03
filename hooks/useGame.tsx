@@ -56,7 +56,7 @@ const defaultState = {
     extension: 0,
     tolerance: 30,
     distance: 20,
-    delay: 100,
+    delay: 125,
   },
   rounds: [],
   isStarted: false,
