@@ -55,8 +55,8 @@ const defaultState = {
     height: 0,
     extension: 0,
     tolerance: 25,
-    distance: 20,
-    delay: 125,
+    distance: 10,
+    delay: 75,
   },
   rounds: [],
   isStarted: false,
@@ -67,7 +67,7 @@ const defaultState = {
   },
   multiplier: {
     distance: 1.1,
-    step: 10,
+    step: 5,
   },
 };
 type Size = {

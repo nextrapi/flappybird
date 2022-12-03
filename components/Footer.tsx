@@ -49,7 +49,7 @@ export default function Footer() {
         <div>Best: {best}</div>
         <div>Score: {score}</div>
         <div className="w-full text-center text-lg">
-          Speed: {(distance / 20).toFixed(1)}
+          Speed: {(distance / 10).toFixed(1)}
         </div>
       </div>
     </footer>
