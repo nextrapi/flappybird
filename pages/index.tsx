@@ -11,7 +11,7 @@ const Home: NextPage = () => {
   return (
     <div className="fixed h-screen w-full flex bg-zinc-800 p-5">
       <Head>
-        <title>Create Next App</title>
+        <title>Flappy Bird</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
